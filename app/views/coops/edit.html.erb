@@ -1,0 +1,9 @@
+<h1>Edit Co-Op</h1>
+
+<%= simple_form_for @coop do |f| %>
+  <%= f.select :major_id, @majors %>
+  <%= f.input :title, label: "Co-Op Title" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.input :company, label: "Company" %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1 class="current-major"><%= params[:major] %></h1>
+<% if @coops.count == 0 %>
+  <h1>There are no co-ops currently posted for this major</h1>
+<% else %>
+
+<% @coops.each do |coop| %>
+  <h2><%= link_to coop.title, coop_path(coop) %></h2>
+<% end %>
+
+

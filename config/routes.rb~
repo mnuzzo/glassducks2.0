@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :coops do
-	resources :reviews
-  end
+  resources :coops
   root 'coops#index'
 end

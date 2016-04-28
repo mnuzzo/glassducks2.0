@@ -1,0 +1,22 @@
+<h2><%= @coop.title %></h2>
+
+<h3><%= @coop.company %></h3>
+
+<p><%= @coop.description %></p><br>
+<%= render @coop.reviews %>
+
+<%= link_to "Back", root_path %> 
+
+
+
+<% if user_signed_in? %>
+<% if @coop.user_id == current_user.id %>
+
+
+  <%= link_to "Edit Posting", edit_coop_path(@coop) %>
+  <%= link_to "Delete Posting", coop_path(@coop), method: :delete, data: { confirm: "Are you sure?" } %>
+  <div>
+    <%= link_to "Add Review", new_coop_review_path(@coop) %>
+  </div>
+<% end %>
+<% end %>
